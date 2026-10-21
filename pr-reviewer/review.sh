@@ -8,7 +8,7 @@
 #        ./review.sh --rerun    re-review after new commits: report only new or still-open issues
 set -e
 cd ${0:A:h}
-mkdir -p out
+mkdir -p out/raw out/pass
 SCHEMA=$(cat findings.schema.json)
 mode=${1:-normal}
 changed=(${(f)"$(cd pr && find inventory -name '*.py' | sort)"})
@@ -17,9 +17,9 @@ review() {   # review <name> <prompt file> <input text>
   # -p: non-interactive, no prompts to hang the job.  --tools "": review only, no file or shell access.
   claude -p "$(cat $2)
 
-$3" --output-format json --json-schema "$SCHEMA" --tools "" > out/$1.raw.json
-  python3 -c "import json;print(json.dumps(json.load(open('out/$1.raw.json'))['structured_output']))" > out/$1.json
-  echo "  $1: $(python3 -c "import json;print(len(json.load(open('out/$1.json'))['findings']))") findings"
+$3" --output-format json --json-schema "$SCHEMA" --tools "" < /dev/null > out/raw/$1.json
+  python3 -c "import json;print(json.dumps(json.load(open('out/raw/$1.json'))['structured_output']))" > out/pass/$1.json
+  echo "  $1: $(python3 -c "import json;print(len(json.load(open('out/pass/$1.json'))['findings']))") findings"
 }
 
 if [[ $mode == --vague ]]; then
@@ -31,7 +31,7 @@ $all"
 fi
 
 prior=""
-[[ $mode == --rerun && -f out/findings.json ]] && prior="Findings already posted on this PR:
+[[ $mode == --rerun && -f out/findings.json ]] && rm -f out/pass/*.json && prior="Findings already posted on this PR:
 $(cat out/findings.json)
 Report only issues that are new or still not fixed in the code below. Don't repeat fixed ones."
 
@@ -50,15 +50,19 @@ done
 
 echo "Integration pass"
 all=$(for f in $changed; do echo "=== $f"; cat -n pr/$f; done)
+filefindings=$(cat out/pass/*.json)
 review integration prompts/integration_review.md "$prior
+Findings the per-file passes already reported (don't repeat these):
+$filefindings
+
 All changed files in the pull request (new versions):
 $all"
 
 python3 - <<'PY'
 import json, glob
 findings = []
-for p in sorted(glob.glob("out/*.json")):
-    if p.endswith((".raw.json", "findings.json", "vague.json")):
+for p in sorted(glob.glob("out/pass/*.json")):
+    if p.endswith("vague.json"):
         continue
     findings += json.load(open(p))["findings"]
 rank = {"critical": 0, "major": 1, "minor": 2}
