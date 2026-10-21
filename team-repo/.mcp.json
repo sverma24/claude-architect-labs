@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "tickets": {
+      "command": "uv",
+      "args": ["run", "--quiet", "tickets.py"],
+      "env": {"TICKETS_TOKEN": "${TICKETS_TOKEN}"}
+    }
+  }
+}

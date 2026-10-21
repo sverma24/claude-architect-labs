@@ -1,0 +1,7 @@
+{
+  "enableAllProjectMcpServers": true,
+  "env": {"ENABLE_TOOL_SEARCH": "false"},
+  "permissions": {
+    "allow": ["Read", "Grep", "Glob", "Edit", "Bash(uv run pytest*)", "mcp__tickets__*"]
+  }
+}
