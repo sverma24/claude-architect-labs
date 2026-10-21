@@ -12,3 +12,4 @@ __pycache__/
 .pytest_cache/
 uv.lock
 pr-reviewer/out/
+invoice-extractor/out/

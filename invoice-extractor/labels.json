@@ -1,0 +1,106 @@
+{
+  "inv-01-table.txt": {
+    "type": "table",
+    "vendor": "ACME Cloud Services",
+    "invoice_number": "AC-2026-0418",
+    "issue_date": "2026-09-30",
+    "due_date": "2026-10-30",
+    "currency": "USD",
+    "category": [
+      "software",
+      "services"
+    ],
+    "stated_total": 277.5
+  },
+  "inv-02-email.txt": {
+    "type": "narrative",
+    "vendor": "Dana Whitfield Consulting",
+    "invoice_number": "2026-17",
+    "issue_date": "2026-09-22",
+    "due_date": [
+      "2026-10-22",
+      null
+    ],
+    "currency": "USD",
+    "category": [
+      "services",
+      "unclear"
+    ],
+    "stated_total": [
+      null,
+      2720
+    ]
+  },
+  "inv-03-eur.txt": {
+    "type": "table",
+    "vendor": "Nordlicht Hardware GmbH",
+    "invoice_number": "DE-88412",
+    "issue_date": "2026-10-05",
+    "due_date": null,
+    "currency": "EUR",
+    "category": "hardware",
+    "stated_total": 1056.13
+  },
+  "inv-04-mismatch.txt": {
+    "type": "table",
+    "vendor": "BrightDesk Office Supply",
+    "invoice_number": "BD-5521",
+    "issue_date": "2026-10-02",
+    "due_date": null,
+    "currency": "USD",
+    "category": [
+      "hardware",
+      "other"
+    ],
+    "stated_total": 690.0
+  },
+  "inv-05-no-due.txt": {
+    "type": "narrative",
+    "vendor": "PixelPath Design Studio",
+    "invoice_number": "PP-301",
+    "issue_date": "2026-10-14",
+    "due_date": null,
+    "currency": "USD",
+    "category": "services",
+    "stated_total": [
+      null,
+      1800.0
+    ]
+  },
+  "inv-06-po-ref.txt": {
+    "type": "table",
+    "vendor": "Northwind Logistics",
+    "invoice_number": "NL-77310",
+    "issue_date": "2026-10-08",
+    "due_date": null,
+    "currency": "USD",
+    "category": [
+      "services",
+      "other"
+    ],
+    "stated_total": 1236.9
+  },
+  "inv-07-receipt.txt": {
+    "type": "receipt",
+    "vendor": "Skyline Air",
+    "invoice_number": "QX7P2L",
+    "issue_date": "2026-10-11",
+    "due_date": null,
+    "currency": "USD",
+    "category": "travel",
+    "stated_total": 217.4
+  },
+  "inv-08-mixed.txt": {
+    "type": "table",
+    "vendor": "TechNest Solutions",
+    "invoice_number": "TN-9002",
+    "issue_date": "2026-10-01",
+    "due_date": "2026-10-31",
+    "currency": "USD",
+    "category": [
+      "unclear",
+      "services"
+    ],
+    "stated_total": 942.0
+  }
+}

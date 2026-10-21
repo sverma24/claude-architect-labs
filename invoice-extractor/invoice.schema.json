@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "vendor": {"type": "string"},
+    "invoice_number": {"type": ["string", "null"]},
+    "issue_date": {"type": ["string", "null"], "description": "YYYY-MM-DD"},
+    "due_date": {"type": ["string", "null"], "description": "YYYY-MM-DD, null if the document doesn't give one"},
+    "currency": {"type": "string", "enum": ["USD", "EUR", "GBP", "other"]},
+    "currency_other": {"type": ["string", "null"]},
+    "category": {"type": "string", "enum": ["software", "hardware", "services", "travel", "other", "unclear"]},
+    "category_detail": {"type": ["string", "null"]},
+    "line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {"type": "string"},
+          "quantity": {"type": "number"},
+          "amount": {"type": "number"}
+        },
+        "required": ["description", "quantity", "amount"],
+        "additionalProperties": false
+      }
+    },
+    "stated_total": {"type": ["number", "null"], "description": "The total printed on the document, or null"},
+    "calculated_total": {"type": "number", "description": "Sum of line_items amounts plus any tax lines"},
+    "conflict_detected": {"type": "boolean"},
+    "po_number": {"type": ["string", "null"]},
+    "field_confidence": {
+      "type": "object",
+      "properties": {
+        "vendor": {"type": "number"}, "invoice_number": {"type": "number"}, "issue_date": {"type": "number"},
+        "due_date": {"type": "number"}, "category": {"type": "number"}, "total": {"type": "number"}
+      },
+      "required": ["vendor", "invoice_number", "issue_date", "due_date", "category", "total"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["vendor", "invoice_number", "issue_date", "due_date", "currency", "currency_other", "category",
+               "category_detail", "line_items", "stated_total", "calculated_total", "conflict_detected",
+               "po_number", "field_confidence"],
+  "additionalProperties": false
+}

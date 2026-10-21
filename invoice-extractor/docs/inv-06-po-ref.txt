@@ -1,0 +1,5 @@
+Northwind Logistics - Invoice NL-77310 - 2026-10-08
+Freight, Chicago to Denver, 3 pallets ............ $1,140.00
+Fuel surcharge ................................... $96.90
+Total ............................................ $1,236.90
+PO number: as listed on the attached purchase order.

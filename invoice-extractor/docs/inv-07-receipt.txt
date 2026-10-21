@@ -1,0 +1,4 @@
+SKYLINE AIR  - e-ticket receipt
+Passenger: R. Mehta    Booking ref: QX7P2L    Issued: 2026-10-11
+SFO -> SEA  Economy   fare 186.00  taxes 31.40
+Total charged: USD 217.40   Paid by card ****4421
