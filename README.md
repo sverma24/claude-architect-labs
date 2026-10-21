@@ -8,8 +8,11 @@ a normal Claude subscription. They don't need an API key or any sign-up, and no 
 |---|---|---|
 | [refund-desk](refund-desk/) | Customer Support Resolution Agent | MCP tools, structured errors, PreToolUse/PostToolUse hooks, escalation rules |
 | [research-crew](research-crew/) | Multi-Agent Research System | coordinator + subagents, parallel delegation, error propagation, sources that disagree |
+| [team-repo](team-repo/) | Code Generation with Claude Code / Developer Productivity | CLAUDE.md hierarchy, path rules, commands, skills, MCP resources, plan mode, sessions |
+| [pr-reviewer](pr-reviewer/) | Claude Code for Continuous Integration | `claude -p` with a JSON schema, per-file and integration passes, explicit review criteria |
+| [invoice-extractor](invoice-extractor/) | Structured Data Extraction | schema design, validation-retry, confidence routing, Batches API walkthrough |
 
-More labs (team Claude Code repo, CI reviewer, data extraction) are added as the course is recorded.
+
 
 ## Requirements
 - [Claude Code](https://code.claude.com), signed in
