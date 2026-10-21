@@ -1,0 +1,10 @@
+# Runtime files the labs write while you use them
+refund-desk/.claude/state/
+refund-desk/.claude/last_tool_call.json
+refund-desk/data/.gateway_tried
+refund-desk/data/refunds.jsonl
+refund-desk/data/escalations.jsonl
+research-crew/reports/*.md
+.claude/settings.local.json
+__pycache__/
+.DS_Store

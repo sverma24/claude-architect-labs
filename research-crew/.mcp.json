@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "news-archive": {
+      "command": "uv",
+      "args": ["run", "--quiet", "archive.py"],
+      "env": {"ARCHIVE_DOWN": "${ARCHIVE_DOWN:-0}"}
+    }
+  }
+}

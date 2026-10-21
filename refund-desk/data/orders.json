@@ -1,0 +1,7 @@
+[
+  {"id": "ORD-5001", "customer_id": "cust_1001", "item": "Wireless headphones", "total": 89.00,   "status_code": 3, "ordered_days_ago": 9,  "delivered_days_ago": 5},
+  {"id": "ORD-5002", "customer_id": "cust_1001", "item": "Laptop 14-inch",      "total": 1249.00, "status_code": 3, "ordered_days_ago": 12, "delivered_days_ago": 8},
+  {"id": "ORD-5003", "customer_id": "cust_1004", "item": "Running shoes",       "total": 120.00,  "status_code": 3, "ordered_days_ago": 50, "delivered_days_ago": 45},
+  {"id": "ORD-5004", "customer_id": "cust_1004", "item": "Desk lamp",           "total": 60.00,   "status_code": 3, "ordered_days_ago": 7,  "delivered_days_ago": 3},
+  {"id": "ORD-5005", "customer_id": "cust_1002", "item": "Phone case",          "total": 25.00,   "status_code": 2, "ordered_days_ago": 2,  "delivered_days_ago": null}
+]

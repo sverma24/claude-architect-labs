@@ -1,0 +1,43 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "mcp__refund-desk__*"
+    ],
+    "deny": [
+      "Bash",
+      "Write",
+      "Edit",
+      "WebSearch",
+      "WebFetch",
+      "NotebookEdit"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__refund-desk__lookup_order|mcp__refund-desk__process_refund",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/gate.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__refund-desk__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/after_tool.py\""
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "ENABLE_TOOL_SEARCH": "false"
+  }
+}

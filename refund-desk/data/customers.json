@@ -1,0 +1,6 @@
+[
+  {"id": "cust_1001", "name": "Priya Shah",   "email": "priya.shah@example.com",   "phone": "+1-415-555-0142", "tier": "gold"},
+  {"id": "cust_1002", "name": "Alex Morgan",  "email": "alex.morgan@example.com",  "phone": "+1-212-555-0199", "tier": "standard"},
+  {"id": "cust_1003", "name": "Alex Morgan",  "email": "amorgan77@example.com",    "phone": "+1-312-555-0177", "tier": "standard"},
+  {"id": "cust_1004", "name": "Dan Okafor",   "email": "dan.okafor@example.com",   "phone": "+1-646-555-0110", "tier": "gold"}
+]

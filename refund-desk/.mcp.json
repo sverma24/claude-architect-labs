@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "refund-desk": {"command": "uv", "args": ["run", "--quiet", "server.py"]}
+  }
+}
